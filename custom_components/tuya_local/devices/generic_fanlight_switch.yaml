@@ -1,0 +1,53 @@
+name: Fan and light switch
+products:
+  - id: suqauqtajcualhw5
+    model: WiFi Fan Light Switch
+entities:
+  - entity: fan
+    dps:
+      - id: 1
+        type: boolean
+        name: switch
+      - id: 102
+        type: string
+        name: speed
+        mapping:
+          - dps_val: low
+            value: 33
+          - dps_val: middle
+            value: 66
+          - dps_val: high
+            value: 100
+  - entity: light
+    dps:
+      - id: 15
+        type: boolean
+        name: switch
+  - entity: select
+    translation_key: light_mode
+    category: config
+    dps:
+      - id: 101
+        type: string
+        name: option
+        mapping:
+          - dps_val: none
+            value: "off"
+          - dps_val: relay
+            value: state
+          - dps_val: pos
+            value: locator
+  - entity: select
+    translation_key: initial_state
+    category: config
+    dps:
+      - id: 103
+        type: string
+        name: option
+        mapping:
+          - dps_val: "off"
+            value: "off"
+          - dps_val: "on"
+            value: "on"
+          - dps_val: memory
+            value: memory
